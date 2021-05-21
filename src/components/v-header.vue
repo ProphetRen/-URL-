@@ -9,7 +9,7 @@
         <router-link class="links" :to="{name:'Calendar'}">Календарь событий</router-link>
         <router-link class="links" :to="{name:'Events'}">Мероприятия
             <span>&#9660;</span>
-            <select value="">
+            <select >
               <option>Кино</option>
               <option>Концерты</option>
               <option>Выставки</option>
