@@ -8,7 +8,12 @@
         <router-link class="links" :to="{name:'Main'}">Главная</router-link>
         <router-link class="links" :to="{name:'Calendar'}">Календарь событий</router-link>
         <router-link class="links" :to="{name:'Events'}">Мероприятия
-          <span>&#9660;</span>
+            <span>&#9660;</span>
+            <select value="">
+              <option>Кино</option>
+              <option>Концерты</option>
+              <option>Выставки</option>
+            </select>
           </router-link>
         <input type="text">
         <button type="submit" value=""></button>

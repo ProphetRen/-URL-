@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <vHeader/>
+    <keep-alive>
+      <router-view>
+      </router-view>
+    </keep-alive>
   </div>
 </template>
 
