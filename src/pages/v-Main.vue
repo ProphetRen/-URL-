@@ -8,14 +8,13 @@
     </div>
     <div class="slider-wrapper" >
       <div class="New_kino">Новинки</div>
-      <Slider />
+      <vSlider/>
     </div>
-   
   </div>
 </template>
 
 <script>
-import Slider from "../components/Slider"
+import vSlider from "../components/Slider"
 import {mapActions,mapGetters} from 'vuex'
 
 export default {
@@ -25,7 +24,7 @@ export default {
     }
   },
   components:{
-    Slider
+    vSlider
   },
   computed:{
     ...mapGetters([
@@ -78,7 +77,7 @@ export default {
   .slider-wrapper{
     display: flex;
     flex-direction: column;
-    width: 88.68vw;
+    max-width: 88.68vw;
     height: 44.6vw;
     background: #C4C4C4;
     box-shadow: 0px 26px 43px rgba(0, 0, 0, 0.09);

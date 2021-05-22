@@ -10,6 +10,7 @@
 
 
 <script>
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import vHeader from "./components/v-header"
 export default{
   components:{

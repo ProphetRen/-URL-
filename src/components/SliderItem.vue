@@ -1,10 +1,10 @@
 <template>
-  <div class="slides">
-    <div class="mn">
+<div>
     <div>
-       <img class="slider" :src=" require('../assets/' + product_data.image)" alt="">
+      <img  :src=" require('../assets/' + films.image)" alt="">
     </div>
-    <div><span>{{product_data.title}}</span></div>
+    <div class="title">
+      <span>{{films.name}}</span>
     </div>
   </div>
 </template>
@@ -12,28 +12,17 @@
 <script>
 export default {
   props:{
-    product_data:{
-      type:Object,
-      default:()=>[]
+    films:{
+      type:Object
     }
   }
+  
 }
 </script>
 
 <style scoped>
-  .slides{
-    display: flex;
-    flex-direction: column;
+  .title{
     text-align: center;
-  }
-
-  .mn{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .slider{
-    width: 200px;
-    height: 200px;
+    padding-right: 8vw;
   }
 </style>

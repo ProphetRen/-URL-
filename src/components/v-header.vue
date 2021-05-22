@@ -99,7 +99,7 @@ export default {
 
 input{
   margin-left: 9vw;
-  width: 23.5VW;
+  width: 21VW;
   height: 3.47vw;
   border-radius: 34px  0 0 34px ;
   border:none;
@@ -111,7 +111,7 @@ input{
 }
 
 button{
-  width:2.1vw;
+  width:2.4vw;
   height:3.45vw ;
   border-radius:0  34px 34px 0;
   border:none;

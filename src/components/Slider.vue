@@ -1,131 +1,83 @@
 <template>
-  <div class ="main_sl">
-    <div :style="{'margin-left':'-' + (102 * CSI) + '%'}" class="sl-m">
-      <SliderItem class="slides"
-        v-for="(product, i) in this.Image" 
-        :key="i+1+'imgSlider'"
-        :product_data = "product"
-      />
-    </div>
-    <div>
-      <button class="buttons" @click="PrevSlide">Предыдущая</button>
-      <button class="buttons" @click="NextSlide">Следующая</button>
-    </div>
-     
-  </div> 
+  <div class="">
+    <VueSlickCarousel class="slider_main"
+    v-bind="settings">
+      <SliderItem v-for="film in this.films" 
+        :key="film.name"
+        :films = "film">
+      </SliderItem>
+    </VueSlickCarousel>
+  </div>
 </template>
 
 <script>
-import SliderItem from '../components/SliderItem'
+import SliderItem from "../components/SliderItem"
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 export default {
   data(){
     return{
-      Image:[
+        films:[
         {
           image:"1.png",
-          name:"1",
-          title:"Кровь"
+          name:"Логотип Vue",
+          price:"100",
+          article:"T1",
+          available:true
         },
         {
           image:"2.png",
-          name:"2",
-          title:"Меч"
+          name:"Закат",
+          price:"120",
+          article:"T2",
+          available:true
         },
         {
           image:"3.png",
-          name:"3",
-          title:"Говяжий"
-        },
+          name:"Охуевший кот",
+          price:"130",
+          article:"T3",
+          available:true
+        }, 
         {
           image:"4.png",
-          name:"4",
-          title:"Анус"
-        },
-        {
-          image:"5.png",
-          name:"5",
-          title:"Кровь"
-        },
-        {
-          image:"6.png",
-          name:"6",
-          title:"Меч"
-        },
-        {
-          image:"7.png",
-          name:"7",
-          title:"Говяжий"
-        },
-        {
-          image:"8.png",
-          name:"8",
-          title:"Анус"
-        } ,{
-          image:"9.png",
-          name:"9",
-          title:"Кровь"
-        },
-        {
-          image:"10.png",
-          name:"10",
-          title:"Меч"
-        },
-        {
-          image:"11.png",
-          name:"11",
-          title:"Говяжий"
-        },
-        {
-          image:"12.png",
-          name:"12",
-          title:"Анус"
-        }        
+          name:"Кавказ",
+          price:"140",
+          article:"T4",
+          available:true
+        }
       ],
-      CSI:0
-    }  
+  settings:{
+  dots: true,
+  focusOnSelect: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  touchThreshold: 5,
+  responsive: [
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      }
+    },
+  ]
+  },
+  }
   },
   components:{
-    SliderItem
-  },
-   methods:{
-     NextSlide(){
-       if(this.CSI> this.Image.length/8){
-         this.CSI = 0
-         console.log(this.CSI);
-       }else{
-         this.CSI++
-       }
-     },
-     PrevSlide(){
-       if(this.CSI > 0 ){
-         this.CSI --
-       }else{
-         this.CSI = 5;
-         this.CSI--
-       }
-     }
-  },
-  
+    SliderItem,
+    VueSlickCarousel
+  }
 }
 </script>
 
 <style scoped>
-.slides{
-  display: flex;
-  flex-direction: row;
-  padding-right: 4vw;
-}
-
-.main_sl{
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  width: 70vw;
-}
-
-.sl-m{
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-}
+  .slider_main{
+    width: 60vw;
+    height: 20vw;
+  }
 </style>

@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store/index'
+import VueSplide from '@splidejs/vue-splide';
+
+Vue.use( VueSplide );
 
 Vue.config.productionTip = false
 
