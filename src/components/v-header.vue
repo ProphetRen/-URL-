@@ -1,22 +1,52 @@
 <template>
-  <div class="v-header">
+  <div class="v-header" @click.self="outside">
     <header>
       <nav class="v-header__elements">
         <router-link :to="{name:'Main'}">
           <img src="../assets/images/Logo.png" alt="">
         </router-link>
-        <router-link class="links" :to="{name:'Main'}">Главная</router-link>
+        <router-link class="links" @click.self="outside" :to="{name:'Main'}">Главная</router-link>
         <router-link class="links" :to="{name:'Calendar'}">Календарь событий</router-link>
-        <router-link class="links" :to="{name:'Events'}">Мероприятия
-            <span>&#9660;</span>
-            <select >
-              <option>Кино</option>
-              <option>Концерты</option>
-              <option>Выставки</option>
-            </select>
-          </router-link>
-        <input type="text">
-        <button type="submit" value=""></button>
+        <div class="menu_list">
+          <span class="links menu" v-if="!show"
+          @click="show = !show"
+          key="menu"
+          >
+            Мероприятия
+            <span>
+              &#9660;
+            </span>
+          </span>
+          <span class="links clear" v-else @click="show = !show"
+          key="clear"
+          >
+            Мероприятия
+            <span>
+              &#9658;
+            </span>
+          </span>
+          <div class="li"
+          v-if="show"
+          >
+            <router-link class="menu_links"
+              @click.self="outside"
+              :to="{name:'Kino'}">Кино</router-link>
+            <router-link class="menu_links" 
+              @click.self="outside"
+              :to="{name:'Concerts'}">Концерты</router-link>
+            <router-link class="menu_links" 
+              @click.self="outside"
+              :to="{name:'Vystavki'}"> Выставки</router-link>
+            <router-link class="menu_links" 
+              @click="outside"
+              :to="{name:'Yarmarki'}">Ярмарки</router-link>
+            <router-link class="menu_links" 
+              @click.self="outside"
+              :to="{name:'StandUp'}">СтендАп</router-link>
+        </div>
+        </div>
+        <input type="text" @click.self="outside">
+        <button type="submit" @click.self="outside" value=""></button>
       </nav>
     </header>
   </div>
@@ -25,7 +55,18 @@
 <script>
 
 export default {
-
+  data(){
+    return{
+      show:false
+    }
+    
+  },
+  methods: {
+    outside: function(){
+      this.show = false;
+      return this.show
+    },
+}
 }
 </script>
 
@@ -50,9 +91,10 @@ export default {
   text-decoration: none;
   font-family: Roboto;
   font-size: 1.66vw;
-  line-height: 1.94vw;
   color: #FFFFFF;
   margin-left: 6.1vw;
+  height: 1.94vw;
+  cursor: pointer;
 }
 
 input{
@@ -81,6 +123,41 @@ button{
   outline: none;
 }
 span{
-  font-size: 0.7vw;
+  font-size: 0.5vw;
+  padding-top: 0.13vw;
+}
+
+.menu_list{
+  display: flex;
+  flex-direction: column;
+}
+
+.li{
+  padding-left: 2.36vw;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 37.7vw;
+  height: 34.7vw;
+  margin-top: 6.25VW;
+  color: #FFFFFF;
+  background: rgba( 0.3);
+  background: rgba(81, 81, 81, 0.74); 
+  backdrop-filter: blur(8px);
+}
+
+.li>a{
+  font-family: Roboto;
+  font-size: 1.66vw;
+  line-height: 1.94vw;
+  padding-top: 2.63vw;
+}
+
+.menu_links{
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.66vw;
+  line-height: 1.94vw;
 }
 </style>

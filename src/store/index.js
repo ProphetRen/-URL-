@@ -5,7 +5,7 @@ import Vuex from "vuex"
 Vue.use(Vuex);
 let store = new Vuex.Store({
   actions:{
-    GET_PRODUCTS_FROM_API({commit}){
+    GET_FILMS_FROM_API({commit}){
       return axios('http://localhost:3000/films',{
         method:"GET"
       })
@@ -15,8 +15,8 @@ let store = new Vuex.Store({
     },
   },
   mutations:{
-    SET_PRODUCTS_TO_STATE:(state, films) =>{
-      state.products = films;
+    SET_FILMS_TO_STATE:(state, films) =>{
+      state.films = films;
     },
   },
 
@@ -25,7 +25,7 @@ let store = new Vuex.Store({
   },
 
   getters:{
-    PRODUCTS(state){
+    FILMS(state){
       return state.films;
     },
   }

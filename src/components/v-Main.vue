@@ -6,27 +6,40 @@
       <div class = "time_elements">23</div>
       <div class = "time_elements">24</div>
     </div>
+    <div class="slider-wrapper">
+      <div class="New_kino">Новинки кино</div>
+      <vSliderItem
+        v-for="film in FILMS" 
+        :key="film.name"
+        :film_data = "film"/>
+    </div>
   </div>
 </template>
 
 <script>
 import {mapActions,mapGetters} from 'vuex'
+import  vSliderItem from "./v-slider"
+
 export default {
   data(){
     return{
       CSI:0
     }
-  },computed:{
+  },
+  components:{
+    vSliderItem
+  },
+  computed:{
     ...mapGetters([
-      'PRODUCTS',
+      'FILMS',
       ])
    },
    methods:{
      ...mapActions([
-       'GET_PRODUCTS_FROM_API',
+       'GET_FILMS_FROM_API',
      ]),
      NextSlide(){
-       if(this.CSI > this.PRODUCTS.length - 2){
+       if(this.CSI > this.FILMS.length - 2){
          this.CSI = 0
          console.log(this.CSI);
        }else{
@@ -42,6 +55,9 @@ export default {
        }
      }
   },
+  mounted(){
+     this.GET_FILMS_FROM_API()
+   }
 }
 </script>
 
@@ -75,5 +91,14 @@ export default {
 
   .time_elements:hover{
     background-color:#67B800;
+  }
+
+  .slider-wrapper{
+    width: 88.68vw;
+    height: 44.6vw;
+    background: #C4C4C4;
+    box-shadow: 0px 26px 43px rgba(0, 0, 0, 0.09);
+    border-radius: 32px;
+    margin: 5.06vw 5.55vw 5.55vw 5.55vw;
   }
 </style>
