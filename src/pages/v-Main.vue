@@ -6,19 +6,17 @@
       <div class = "time_elements">23</div>
       <div class = "time_elements">24</div>
     </div>
-    <div class="slider-wrapper">
-      <div class="New_kino">Новинки кино</div>
-      <vSliderItem
-        v-for="film in FILMS" 
-        :key="film.name"
-        :film_data = "film"/>
+    <div class="slider-wrapper" >
+      <div class="New_kino">Новинки</div>
+      <Slider />
     </div>
+   
   </div>
 </template>
 
 <script>
+import Slider from "../components/Slider"
 import {mapActions,mapGetters} from 'vuex'
-import  vSliderItem from "./v-slider"
 
 export default {
   data(){
@@ -27,7 +25,7 @@ export default {
     }
   },
   components:{
-    vSliderItem
+    Slider
   },
   computed:{
     ...mapGetters([
@@ -38,22 +36,6 @@ export default {
      ...mapActions([
        'GET_FILMS_FROM_API',
      ]),
-     NextSlide(){
-       if(this.CSI > this.FILMS.length - 2){
-         this.CSI = 0
-         console.log(this.CSI);
-       }else{
-         this.CSI++
-       }
-     },
-     PrevSlide(){
-       if(this.CSI > 0){
-         this.CSI--
-       }else{
-         this.CSI = 4;
-         this.CSI--;
-       }
-     }
   },
   mounted(){
      this.GET_FILMS_FROM_API()
@@ -94,11 +76,16 @@ export default {
   }
 
   .slider-wrapper{
+    display: flex;
+    flex-direction: column;
     width: 88.68vw;
     height: 44.6vw;
     background: #C4C4C4;
     box-shadow: 0px 26px 43px rgba(0, 0, 0, 0.09);
     border-radius: 32px;
     margin: 5.06vw 5.55vw 5.55vw 5.55vw;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
   }
 </style>

@@ -3,7 +3,7 @@
     <header>
       <nav class="v-header__elements">
         <router-link :to="{name:'Main'}">
-          <img src="../assets/images/Logo.png" alt="">
+          <img src="../assets/Logo.png" alt="">
         </router-link>
         <router-link class="links" @click.self="outside" :to="{name:'Main'}">Главная</router-link>
         <router-link class="links" :to="{name:'Calendar'}">Календарь событий</router-link>
@@ -83,7 +83,7 @@ export default {
 .v-header__elements{
   display: flex;
   flex-direction: row;
-  margin-left:3.54vw;
+  margin-left:3vw;
   align-items: center;
 }
 
@@ -92,13 +92,13 @@ export default {
   font-family: Roboto;
   font-size: 1.66vw;
   color: #FFFFFF;
-  margin-left: 6.1vw;
+  margin-left: 4vw;
   height: 1.94vw;
   cursor: pointer;
 }
 
 input{
-  margin-left: 12.6vw;
+  margin-left: 9vw;
   width: 23.5VW;
   height: 3.47vw;
   border-radius: 34px  0 0 34px ;
@@ -116,7 +116,7 @@ button{
   border-radius:0  34px 34px 0;
   border:none;
   background-color:white ;
-  background-image: url(../assets/images/Vector.png);
+  background-image: url(../assets/Vector.png);
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
