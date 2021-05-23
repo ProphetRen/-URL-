@@ -16,7 +16,7 @@
   ></functional-calendar>
   </div>
   <div class="list">
-     <p>{{date}}</p>
+     <p class="low_date">{{date}}</p>
   <events :date="date"/>
   </div>
     </div>
@@ -71,5 +71,10 @@ export default {
   padding: 5vw;
   overflow: scroll;
   overflow-x: hidden;
+}
+
+.low_date{
+  margin:1vw;
+  display: none;
 }
 </style>

@@ -39,14 +39,23 @@
               :to="{name:'Vystavki'}"> Выставки</router-link>
             <router-link class="menu_links" 
               @click="outside"
-              :to="{name:'Yarmarki'}">Ярмарки</router-link>
+              :to="{name:'Yarmarki'}">Фестивали</router-link>
             <router-link class="menu_links" 
               @click.self="outside"
-              :to="{name:'StandUp'}">СтендАп</router-link>
+              :to="{name:'StandUp'}">Спектакли</router-link>
+              <router-link class="menu_links" 
+              @click.self="outside"
+              :to="{name:'StandUp'}">Библиотеки</router-link>
+               
         </div>
         </div>
         <input type="text" @click.self="outside">
-        <button type="submit" @click.self="outside" value=""></button>
+        <button class ="input_btn" type="submit" @click.self="outside" value=""></button>
+        <router-link 
+        @click.self="outside"
+        :to="{name:'Authorisation'}">
+              <button class="Authorisation"></button>
+        </router-link>
       </nav>
     </header>
   </div>
@@ -110,7 +119,7 @@ input{
   color: #000000;
 }
 
-button{
+.input_btn{
   width:2.4vw;
   height:3.45vw ;
   border-radius:0  34px 34px 0;
@@ -162,5 +171,18 @@ span{
   font-size: 1.66vw;
   line-height: 1.94vw;
   
+}
+
+.Authorisation{
+  margin-left: 14.5vw;
+  width: 4.5vw;
+  height: 4.5vw;
+  border-radius: 50%;
+  background-image: url(../assets/ava.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border:none;
+  margin-top: 0.5vw;
+  outline: none;
 }
 </style>

@@ -5,7 +5,7 @@ import vMain from '../pages/Main'
 import vConcerts from '../pages/Concerts'
 import vKino from '../pages/SectionEventInformation'
 import vVistavki from '../pages/Vistavki'
-import vYarmarki from '../pages/Yarmarki'
+import vSpektakli from '../pages/Spektakli'
 import vStandUp from '../pages/Authorisation'
 
 Vue.use(VueRouter)
@@ -40,13 +40,13 @@ const router = new VueRouter({
       component:vVistavki
     },
     {
-      path:"/Yarmarki",
-      name:'Yarmarki',
-      component:vYarmarki
+      path:"/Spektakli",
+      name:'Spektakli',
+      component:vSpektakli
     },
     {
-      path:"/StandUp",
-      name:'StandUp',
+      path:"/Authorisation",
+      name:'Authorisation',
       component:vStandUp
     }
   ]

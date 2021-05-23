@@ -20,7 +20,6 @@ import {mapActions,mapGetters} from 'vuex'
 export default {
   data(){
     return{
-      CSI:0
     }
   },
   components:{

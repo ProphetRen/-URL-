@@ -1,7 +1,6 @@
 <template>
     <div class="section" >
-        <event class="content" v-for="(item, i) in eventList" :key="i+'img'" :dataArr="item"/>
-        
+        <event class="content" v-for="(item, i) in eventList" :key="i+'img'" :dataArr="item" v-show="date===eventList[i].IsDate"/> 
     </div>
 </template>
 
@@ -41,7 +40,7 @@ export default {
                 time: [
                     '12.00', '13.00'
                 ],
-                IsDate:'12/5/2021'
+                IsDate:'28/5/2021'
             }
         ]
       }
