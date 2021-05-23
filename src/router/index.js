@@ -6,7 +6,7 @@ import vConcerts from '../pages/Concerts'
 import vKino from '../pages/SectionEventInformation'
 import vVistavki from '../pages/Vistavki'
 import vYarmarki from '../pages/Yarmarki'
-import vStandUp from '../pages/StandUp'
+import vStandUp from '../pages/Authorisation'
 
 Vue.use(VueRouter)
 
