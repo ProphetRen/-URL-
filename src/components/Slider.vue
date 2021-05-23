@@ -24,28 +24,32 @@ export default {
           name:"Логотип Vue",
           price:"100",
           article:"T1",
-          available:true
+          available:true,
+          type:"Кино",
         },
         {
           image:"2.png",
           name:"Закат",
           price:"120",
           article:"T2",
-          available:true
+          available:true,
+          type:"Кино",
         },
         {
           image:"3.png",
           name:"Охуевший кот",
           price:"130",
           article:"T3",
-          available:true
+          available:true,
+          type:"Кино",
         }, 
         {
           image:"4.png",
           name:"Кавказ",
           price:"140",
           article:"T4",
-          available:true
+          available:true,
+          type:"Кино",
         }
       ],
   settings:{
@@ -56,6 +60,9 @@ export default {
   slidesToShow: 3,
   slidesToScroll: 3,
   touchThreshold: 5,
+  autoplay: true,
+  autoplaySpeed: 6000,
+  cssEase: "linear",
   responsive: [
     {
       breakpoint: 1000,

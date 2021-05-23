@@ -48,7 +48,8 @@ export default {
     flex-direction: row;
     width: 100%;
     background: #EBEAEA;
-    height: 5.48vw;
+    height: 4.2vw;
+    align-self: center;
 
   }
   .first{
@@ -56,18 +57,20 @@ export default {
   }
   .time_elements{
     text-align: center;
+    align-items: center;
     background: #FFFFFF;
     border-radius: 42px;
     margin-right: 3.4vw;
     margin-top: 1.59vw;
     width: 9.3vw;
-    height: 2.7vw;
+    height: 1.5vw;
     background-color:white ;
     padding-top: 0.6vw;
     font-family: Roboto;
-    font-size: 1.66vw;
+    font-size: 1.3vw;
     line-height: 1.94vw;
     color: #000000;
+    padding-bottom: 0.3vw;
   }
 
   .time_elements:hover{
@@ -86,5 +89,12 @@ export default {
     justify-content: center;
     align-items: center;
     align-self: center;
+  }
+
+  .New_kino{
+    font-family:Roboto;
+    font-size: 5vw;
+    margin-bottom:10vw;
+    margin-right: 4vw;
   }
 </style>

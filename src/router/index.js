@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import vCalendar from '../pages/v-Calendar'
-import vEvents from '../components/v-Events'
-import vMain from '../pages/v-Main'
-import vConcerts from '../components/v-Concerts'
-import vKino from '../components/v-Kino'
-import vVistavki from '../components/v-Vistavki'
-import vYarmarki from '../components/v-Yarmarki'
-import vStandUp from '../components/v-StandUp'
+import vCalendar from '../pages/Calendar'
+import vMain from '../pages/Main'
+import vConcerts from '../pages/Concerts'
+import vKino from '../pages/SectionEventInformation'
+import vVistavki from '../pages/Vistavki'
+import vYarmarki from '../pages/Yarmarki'
+import vStandUp from '../pages/StandUp'
 
 Vue.use(VueRouter)
 
@@ -24,11 +23,6 @@ const router = new VueRouter({
       path:"/Calendar",
       name:'Calendar',
       component:vCalendar
-    },
-    {
-      path:"/Events",
-      name:'Events',
-      component:vEvents
     },
     {
       path:"/Concerts",

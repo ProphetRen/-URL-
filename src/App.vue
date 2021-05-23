@@ -11,7 +11,7 @@
 
 <script>
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import vHeader from "./components/v-header"
+import vHeader from "./components/header"
 export default{
   components:{
     vHeader

@@ -5,6 +5,11 @@
     </div>
     <div class="title">
       <span>{{films.name}}</span>
+      -
+      <span>{{films.type}}</span>
+    </div>
+    <div class="type">
+       
     </div>
   </div>
 </template>
@@ -24,5 +29,13 @@ export default {
   .title{
     text-align: center;
     padding-right: 8vw;
+    font-family: Roboto;
+    font-size: 1vw;
+  }
+
+  .type{
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1vw;
   }
 </style>

@@ -74,7 +74,7 @@ export default {
 .v-header{
   background-color:#c4c4c4;
   width: 100%;
-  height: 10.625VW;
+  height: 8VW;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -90,7 +90,7 @@ export default {
 .links{
   text-decoration: none;
   font-family: Roboto;
-  font-size: 1.66vw;
+  font-size: 1.3vw;
   color: #FFFFFF;
   margin-left: 4vw;
   height: 1.94vw;
@@ -130,6 +130,7 @@ span{
 .menu_list{
   display: flex;
   flex-direction: column;
+    transition: 10s ease-in-out;
 }
 
 .li{
@@ -138,13 +139,14 @@ span{
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 37.7vw;
-  height: 34.7vw;
-  margin-top: 6.25VW;
+  width: 32.7vw;
+  height: 30.7vw;
+  margin-top: 5VW;
   color: #FFFFFF;
   background: rgba( 0.3);
   background: rgba(81, 81, 81, 0.74); 
   backdrop-filter: blur(8px);
+  z-index: 400;
 }
 
 .li>a{
@@ -159,5 +161,6 @@ span{
   text-decoration: none;
   font-size: 1.66vw;
   line-height: 1.94vw;
+  
 }
 </style>
