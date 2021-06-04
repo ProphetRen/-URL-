@@ -9,14 +9,14 @@
        v-on:choseDay="clickDay"
        v-on:changeMonth="changeDate"
        v-on:isToday="clickToday"
-       :is-date-range="true"
        :change-month-function="true"
        :change-year-function="true"
+       :configs="calendarConfigs"
       
   ></functional-calendar>
   </div>
   <div class="list">
-     <p class="low_date">{{date}}</p>
+     
   <events :date="date"/>
   </div>
     </div>
@@ -35,6 +35,11 @@ export default {
     data() {
         return {
             calendar: {},
+            calendarConfigs: {
+                dateFormat: 'dd.mm.yyyy',
+                isDatePicker:true,
+                sundayStart:false
+            },
             date: ''
         }
     },
@@ -75,6 +80,5 @@ export default {
 
 .low_date{
   margin:1vw;
-  display: none;
 }
 </style>
