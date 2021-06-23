@@ -6,7 +6,7 @@
   
   <functional-calendar
        v-model="calendar"
-       v-on:choseDay="clickDay"
+       v-on:dayClicked="clickDay"
        v-on:changeMonth="changeDate"
        v-on:isToday="clickToday"
        :change-month-function="true"
@@ -17,8 +17,9 @@
   </div>
   <div class="list">
      
-  <events :date="date"/>
+  <events :date="date" ref="fuck"/>
   </div>
+
     </div>
       
 </template>
@@ -44,17 +45,15 @@ export default {
         }
     },
     methods:{
-       clickDay(data) {
+       clickDay:function (data) {
          this.date = data.date
-      console.log(data); // Get Clicked Day
-    },
+      },
     changeDate(data) {
       console.log(data); //Click left and right to switch months
     },
     clickToday(data) {
       console.log(data); //Jumped to this month
     },
-      
     },
 
 }

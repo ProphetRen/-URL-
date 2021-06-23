@@ -1,15 +1,14 @@
 <template>
     <div class="section" >
-        <event class="content" v-for="(item, i) in eventList" :key="i" :dataArr="item" v-show="date===eventList[i].IsDate" ref="fuck"/>
-        <p>{{date}}</p>
-        <p :class="{'visible':is, 'notvisible':!is}">НЕТ</p>
+        <event class="content" v-for="(item, i) in results" :key="i" :dataArr="item" ref="fuck"/>
+        <p @click="qwe">{{date}}</p>
+        <p v-show="is">НЕТ</p>
     </div>
 </template>
 
 <script>
 import Event from '@/components/Event'
 export default {
-  name: 'App',
     props:{
         date: {
             type: String
@@ -22,40 +21,58 @@ export default {
         eventList : [
             {
                 image: 'image7.png',
-                title: 'sgfdh',
+                title: '1',
                 time: [
                     '12.00', '13.00'
                 ],
-                IsDate:'22.5.2021'
+                IsDate:'1.6.2021'
             },
              {
                 image: 'image7.png',
-                title: 'hghvvgh',
+                title: '2',
                 time: [
                     '12.00', '13.00'
                 ],
-                IsDate:'12.5.2021'
+                IsDate:'12.6.2021'
             },
             {
                 image: 'image7.png',
-                title: 'hghvvgh',
+                title: '3',
                 time: [
                     '12.00', '13.00'
                 ],
-                IsDate:'28.5.2021'
+                IsDate:'22.6.2021'
             }
         ],
-        is:false
+        is:false,
+        ytn:false,
+        results:[
+
+        ]
       }
   },
 
   methods:{
-     
+     qwe:function(){ 
+        let dateq = this.date
+        let result = this.eventList.filter(function(v) {
+            return v.IsDate === dateq   
+        })
+        this.ytn = true
+        this.is = false
+        this.results = result
+        console.log(result) 
+        if(this.results.length === 0){
+            this.ytn = false
+            this.is = true
+        }
+     }
   },
-  components: {
-    Event
+    components: {
+        Event
+    },
+    
   }
-}
 </script>
 
 <style scoped>
